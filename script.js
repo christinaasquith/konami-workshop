@@ -1,13 +1,15 @@
 const text= document.querySelector('.text') 
 const secretDiv = document.querySelector('.secret-div')
+const rambo = document.querySelector('.rambo')
 
 const keys =[]
-const secretCode = ['h', 'a', 'c', 'k']
+const secretCode = ['h', 'a','c','k']
 
 const confettiSettings = {
     target: 'my-canvas',
     size: 1.4,
     max: 150
+    
 }
 const confetti = new ConfettiGenerator(confettiSettings)
 
@@ -18,8 +20,9 @@ function keysDetector (e) {
         keys.shift()
     }
     if (JSON.stringify(keys) === JSON.stringify(secretCode)) {
-        secretDiv.getElementsByClassName.display = 'block'
+        secretDiv.style.display = 'block'
         text.innerHTML = 'Identity Verified!'
+        rambo.style.display = "block"
         confetti.render()
         AnimationEffect({
             targets: 'body',
